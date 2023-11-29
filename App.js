@@ -40,6 +40,9 @@ export default function App() {
   const [save, setSave] = useState(false);
 
   const addTodoFun = () => {
+    if (todo === "") {
+      return null;
+    }
     if (save) {
       const data = todoList.map((d) =>
         d.title === edit ? { ...d, title: todo } : d
